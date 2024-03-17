@@ -96,6 +96,14 @@ describe("Score Bowling", () => {
   });
 });
 
+describe("Score Bowling", () => {
+  it("Juego Perfecto", () => {
+    let BowlingGame = new Game();
+    rollMany(BowlingGame, 12, 10);
+    expect(BowlingGame.score()).toEqual(300);
+  });
+});
+
 function rollMany(BowlingGame, n, pins){
   for (var i = 0; i < n; i++)
     BowlingGame.roll(pins);
